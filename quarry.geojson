@@ -1,0 +1,25 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+                                                                                
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "name": "a", "address": "aaaa", "licenseno": "111", "capacity": "1000" }, "geometry": { "type": "Point", "coordinates": [ 4.006429711664856, 7.209303403543647 ] } },
+{ "type": "Feature", "properties": { "id": 2, "name": "b", "address": "bbbb", "licenseno": "222", "capacity": "2000" }, "geometry": { "type": "Point", "coordinates": [ 4.036890435289715, 7.222786018918584 ] } },
+{ "type": "Feature", "properties": { "id": 3, "name": "c", "address": "ccccc", "licenseno": "333", "capacity": "1200" }, "geometry": { "type": "Point", "coordinates": [ 4.076089891102035, 7.239264771043508 ] } },
+{ "type": "Feature", "properties": { "id": 4, "name": "d", "address": "dddd", "licenseno": "444", "capacity": "1300" }, "geometry": { "type": "Point", "coordinates": [ 4.128022928101794, 7.230026682731051 ] } },
+{ "type": "Feature", "properties": { "id": 5, "name": "e", "address": "eeee", "licenseno": "555", "capacity": "1000" }, "geometry": { "type": "Point", "coordinates": [ 4.078961188820772, 7.161365215543869 ] } },
+{ "type": "Feature", "properties": { "id": 6, "name": "f", "address": "ffff", "licenseno": "666", "capacity": "1200" }, "geometry": { "type": "Point", "coordinates": [ 4.022533946696033, 7.108183788231615 ] } },
+{ "type": "Feature", "properties": { "id": 7, "name": "g", "address": "gggg", "licenseno": "777", "capacity": "1000" }, "geometry": { "type": "Point", "coordinates": [ 4.113916117570611, 7.120667691356557 ] } },
+{ "type": "Feature", "properties": { "id": 8, "name": "h", "address": "hhh", "licenseno": "888", "capacity": "1500" }, "geometry": { "type": "Point", "coordinates": [ 4.14662394375796, 7.15012970273142 ] } },
+{ "type": "Feature", "properties": { "id": 9, "name": "i", "address": "iii", "licenseno": "999", "capacity": "2000" }, "geometry": { "type": "Point", "coordinates": [ 4.178083379632814, 7.183336885043767 ] } },
+{ "type": "Feature", "properties": { "id": 11, "name": "k", "address": "kkk", "licenseno": "101010", "capacity": "1800" }, "geometry": { "type": "Point", "coordinates": [ 4.228268670195081, 7.232024107231043 ] } },
+{ "type": "Feature", "properties": { "id": 12, "name": "l", "address": "lll", "licenseno": "11111", "capacity": "1600" }, "geometry": { "type": "Point", "coordinates": [ 4.20030472719521, 7.134150306731494 ] } },
+{ "type": "Feature", "properties": { "id": 13, "name": "m", "address": "mmm", "licenseno": "121212", "capacity": "1500" }, "geometry": { "type": "Point", "coordinates": [ 4.235259655945049, 7.136147731231485 ] } },
+{ "type": "Feature", "properties": { "id": 14, "name": "n", "address": "nnn", "licenseno": "131313", "capacity": "1500" }, "geometry": { "type": "Point", "coordinates": [ 4.102181248633164, 7.071980469169283 ] } },
+{ "type": "Feature", "properties": { "id": 15, "name": "o", "address": "ooo", "licenseno": "141414", "capacity": "2000" }, "geometry": { "type": "Point", "coordinates": [ 4.143128450882974, 7.091455358044193 ] } },
+{ "type": "Feature", "properties": { "id": 16, "name": "p", "address": "ppp", "licenseno": "1515", "capacity": "1200" }, "geometry": { "type": "Point", "coordinates": [ 4.162853017820384, 7.053504292544369 ] } },
+{ "type": "Feature", "properties": { "id": 10, "name": "j", "address": "jjj", "licenseno": "1616", "capacity": "1800" }, "geometry": { "type": "Point", "coordinates": [ 4.072469559195802, 7.041270067481924 ] } },
+{ "type": "Feature", "properties": { "id": 17, "name": "r", "address": "rrr", "licenseno": "1717", "capacity": "2000" }, "geometry": { "type": "Point", "coordinates": [ 4.052495314195894, 7.016551939294539 ] } },
+{ "type": "Feature", "properties": { "id": 18, "name": "s", "address": "ssss", "licenseno": "1818", "capacity": "1500" }, "geometry": { "type": "Point", "coordinates": [ 4.185948238601527, 7.2407628394185 ] } }
+]
+}
