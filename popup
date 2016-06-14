@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title> Interactive info popups</title>
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+	<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+	
+		<script src='http://code.jquery.com/jquery-3.0.0.min.js'></script>
+</head>
+<body>
+<div id="map" style="width: 800px;height: 600px"></div>
+
+<script>
+var map = L.map('map').setView([7.1018, 4.1032], 12);
+mapLink = 
+'<a href="http://openstreetmap.org">openstreetmap</a>,'+
+'<a href="http://mapsnigeriainitiative.wordpress.com">mapsnigeriainitiative</a>';
+L.tileLayer(
+'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+attribution: ' &copy; ' + mapLink,
+maxZoom: 22,
+}).addTo(map);
+
+
+function onEachFeature(feature, layer)
+{if(feature.properties&&feature.properties.lithology&& feature.properties.type&&feature.properties.class){
+layer.bindPopup('Lithology:' + feature.properties.lithology + "<br>" + 'Type:'+ feature.properties.type + "<br>" + 'Class:' + feature.properties.class
++ "<br>" + "<img src='https://lh3.googleusercontent.com/Yg9_IYforuSxEuRyBOGQIa4KXBzzVYt3v1KP-WaTuV4CJkYrUX7Qmyj5aecUdthXK8GXlgWy9AkYeFFcq3eJGm9Y_Z0ScmwW-Eym6LaQALnORbG7D4orLVh-NwqDqRhGOoYhRrF6YFns_NuhVOmsmE-ljxAfzTcts54n-8b2EHF5qvYKR3rX6LkElRmGOM-X_7h3orhGIA-EyI_jki-tR5W_jOFouY3ppQcTDua5n4zeINSzfkPQkMi4I12MBERA-W-fVnJV4PHFkMPtRimnVtSqtVcxw20UJLCRsIcdvcL9B0xGNyELKGAa2cRkH0utDAN3QPMHQFhRR222TfAeu0-KOvn7X4te-oc6uYzKF1tEcYm-WxFcEgBWG6OfZEtJon5Un_VBbH-HCgNrau_DhsGqLyVy55WulmlhES4MXCjuNx0t5CuKKUUVcXhOPuOmi-hNSFppNz81q9vpayDnfuDxpI7XB5oIpfn1kInyUn3X-JexJp054IzxohfjW9WgmLLIJHJ40_vPWoT4tPUO3o8AhggPHy3MTCbwJQmqh5bHgpsDOA7t34GlrGNYcAXioD5BnWSUKkeI0HvYBg6aJXhA3_BtNOI=w80-h80-no'/>" +
+"<br>" + 'xxjhk3okioklokuhjwywhjhjjdkjckjksj' + "<br>" + 'whdhd2uhkhsh2hwhhd2jw'+ "<br>" + 'xxjhk3okioklokuhjwywhjhjjdkjckjksj' + "<br>" + 'whdhd2uhkhsh2hwhhd2jw');}}
+
+
+$.getJSON('https://rawgit.com/mayotunde/sample/master/geology.geojson', function(data){
+var geology = L.geoJson(data, {onEachFeature, 
+style: function(feature,layer)
+{switch(feature.properties.lithology)
+{case 'granite': return {fillColor: "#ae7", color: "black",weight: 1, dashArray:"7", fillOpacity: 0.6};
+case 'migmatite': return {fillColor: "#ea7", color: "black", weight: 1, dashArray:"7", fillOpacity: 0.6};
+case 'granite_gneiss': return {fillColor: "yellow", color: "black", weight: 1, dashArray:"7", fillOpacity: 0.6};
+case 'biotite_gneiss': return {fillColor: "#316fff", color: "black", weight: 1, dashArray:"7", fillOpacity: 0.6};}
+}}).addTo(map);
+});
+
+var style = {color:'black', dashArray: "12", weight:2};
+
+
+
+$.getJSON('https://rawgit.com/mayotunde/sample/master/faults.geojson', function(data){
+var faults = L.geoJson(data, style).addTo(map);
+});
+
+var style2 = {color:'#4d4d4d', weight:2, opacity: 0.8};
+
+  
+$.getJSON('https://rawgit.com/mayotunde/sample/master/roads.geojson', function(data){
+var roads = L.geoJson(data, style2).addTo(map);
+});
+
+
+var style5 = {fillcolor:'#4d4d4d', color: 'black',fillOpacity: 0.3, weight:2};
+
+  
+$.getJSON('https://rawgit.com/mayotunde/sample/master/settlement.geojson', function(data){
+var settlement = L.geoJson(data, style5).addTo(map);
+});
+
+
+var style3 = {color:'#000', weight:2, dashArray: "5", opacity: 0.8};
+
+$.getJSON('https://rawgit.com/mayotunde/sample/master/rail.geojson', function(data){
+var rail = L.geoJson(data, style3).addTo(map);
+});
+
+
+var style4 = {fillColor:'#f45', color:'black', weight:2, width:6};  
+ 
+$.getJSON('https://rawgit.com/mayotunde/sample/master/quarry.geojson', function(data){
+var quarry = L.geoJson(data, {
+pointToLayer: function(feature, latlng){
+marker = L.circleMarker(latlng, style4)
+return marker;
+}}).addTo(map);
+});
+
+</script>
+</body>
+</html>
